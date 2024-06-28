@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SlotParadise</title>
+	<link rel="shortcut icon" href="https://savana.life/wlp/casino/slotparadise/images/favicon.svg" type="image/x-icon">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Krona+One&amp;family=Krub:wght@400;500&amp;family=Kufam:ital,wght@0,400..900;1,400..900&amp;display=swap"
+		rel="stylesheet">
+
+	<style>
+		dialog {
+			padding: 20px;
+			border-radius: 7px;
+			border: none;
+			border: 2px solid #4CDF7C;
+			background: white;
+			color: black;
+		}
+
+		dialog::-webkit-scrollbar {
+			width: 7px;
+			height: 7px;
+		}
+
+		.contact-form button {
+			width: 280px;
+		}
+
+		dialog::-webkit-scrollbar-track {
+			background: #f1f1f1;
+		}
+
+		dialog::-webkit-scrollbar-thumb {
+			background: #4CDF7C;
+		}
+
+		dialog .modal-content h1 {
+			font-size: 20px;
+			padding: 7px;
+		}
+
+		dialog .modal-content p {
+			line-height: 18px;
+			padding: 7px;
+		}
+
+		dialog .cancelModal {
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			cursor: pointer;
+			font-size: 25px;
+			color: #4CDF7C;
+		}
+	</style>
+	<style>
+		#okCookie {
+			position: fixed;
+			z-index: 1001;
+			background-color: #f2f2f2;
+			color: #333333;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding: 10px;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			border-top: 1px solid #ccc;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		#okCookie p {
+			padding: 10px;
+		}
+
+		#okCookie #okClose,
+		#okCookie #okCprivacy {
+			padding: 5px 20px;
+
+			margin-left: 10px;
+			text-decoration: none;
+			border-radius: 3px;
+			color: white;
+			cursor: pointer;
+		}
+
+		#okCookie #okClose {
+			background-color: #4CDF7C;
+			text-shadow: 0px 1px 1px #30a656;
+			box-shadow: inset 0px -1px 1px #30a656;
+		}
+
+		#okCookie #okClose:hover {
+			background-color: #30a656;
+		}
+
+		#okCookie #okCprivacy {
+			background-color: #8d9499;
+			text-shadow: 0px 1px 1px #63666b;
+			box-shadow: inset 0px -1px 1px #63666b;
+		}
+
+		#okCookie #okCprivacy:hover {
+			background-color: #a0a8ae;
+		}
+
+		.okcBeginAnimate {
+			-webkit-animation: myfirst 2s;
+			animation: myfirst 2s;
+		}
+
+		/* Chrome, Safari, Opera */
+		@-webkit-keyframes myfirst {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+
+		/* Standard syntax */
+		@keyframes myfirst {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+	</style>
+	<style>
+		.drm-loading {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			border: 3px solid rgba(87, 129, 219, 0.3);
+			border-radius: 50%;
+			border-top-color: #ffffff;
+			animation: drm-spin 1s ease-in-out infinite;
+			-webkit-animation: drm-spin 1s ease-in-out infinite;
+		}
+
+		@keyframes drm-spin {
+			to {
+				-webkit-transform: rotate(360deg);
+			}
+		}
+
+		@-webkit-keyframes drm-spin {
+			to {
+				-webkit-transform: rotate(360deg);
+			}
+		}
+	</style>
+	<style>
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-family: "Krub", sans-serif;
+			font-weight: 400;
+			color: #000;
+			overflow-x: hidden;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin-top: 0;
+		}
+
+		a {
+			text-decoration: none;
+			transition: all 0.3s;
+		}
+
+		.container-fluid {
+			width: 100%;
+			padding: 0 95px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		.container {
+			padding: 0 15px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		@media (min-width: 576px) {
+			.container {
+				max-width: 540px;
+			}
+		}
+
+		@media (min-width: 768px) {
+			.container {
+				max-width: 720px;
+			}
+		}
+
+		@media (min-width: 992px) {
+			.container {
+				max-width: 960px;
+			}
+		}
+
+		@media (min-width: 1200px) {
+			.container {
+				max-width: 1140px;
+			}
+		}
+
+		@media (min-width: 1400px) {
+			.container {
+				max-width: 1220px;
+			}
+		}
+
+		.row {
+			display: flex;
+			gap: 30px;
+		}
+
+		.col-3 {
+			flex: 0 0 auto;
+			width: 25%;
+		}
+
+		.col-4 {
+			flex: 0 0 auto;
+			width: 33.33333333%;
+		}
+
+		.col-5 {
+			flex: 0 0 auto;
+			width: 41.66666667%;
+		}
+
+		.col-6 {
+			flex: 0 0 auto;
+			width: 50%;
+		}
+
+		.col-7 {
+			flex: 0 0 auto;
+			width: 58.33333333%;
+		}
+
+		.h-100 {
+			height: 100%;
+		}
+
+		.img-fluid {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.main-heading {
+			font-family: "Krona One", sans-serif;
+			font-weight: 400;
+		}
+
+		.hero-section {
+			background-image: url('https://savana.life/wlp/casino/slotparadise/images/hero-img.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+			height: 100vh;
+		}
+
+		.hero-section h2 {
+			font-size: 80px;
+			color: #fff;
+			margin-bottom: 10px;
+		}
+
+		.hero-section span {
+			font-size: 80px;
+			color: #F0B948;
+			text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+		}
+
+		.hero-section p {
+			font-weight: 500;
+			color: #fff;
+			font-size: 40px;
+			max-width: 50%;
+			margin-top: 10px;
+			margin-bottom: 40px;
+		}
+
+		.hero-section .hero-btn {
+			border: 1px solid #fff;
+			font-family: "Krub", sans-serif;
+			font-weight: 500;
+			font-size: 20px;
+			padding: 15px 100px;
+			color: #fff;
+			display: inline-block;
+			text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+		}
+
+		.hero-section .hero-btn:hover {
+			background-color: #fff;
+			color: #000;
+		}
+
+		.hero-section-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+		}
+
+		.about-section {
+			padding: 50px 0;
+			background-image: linear-gradient(to right, rgba(240, 232, 152, 0) 0%, rgb(240, 232, 152) 50%);
+			position: relative;
+			z-index: 1;
+		}
+
+		.about-left h3 {
+			font-size: 40px;
+			margin-bottom: 15px;
+		}
+
+		.about-left span {
+			font-size: 30px;
+		}
+
+		.about-left span span {
+			background-color: #000;
+			color: #F0B948;
+			padding: 0 5px;
+		}
+
+		.about-left p {
+			font-size: 28px;
+			margin-top: 40px;
+			max-width: 70%;
+		}
+
+		.about-right p {
+			font-size: 24px;
+		}
+
+		.about-section img {
+			max-width: 100%;
+			height: auto;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			top: 50%;
+			width: 43%;
+			z-index: -1;
+		}
+
+		.best-options {
+			padding: 50px 0;
+		}
+
+		.best-options h3 {
+			font-size: 55px;
+		}
+
+		.opt-machine {
+			background-color: #4CDF7C;
+			box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.5);
+			border-radius: 10px;
+			padding: 30px 80px;
+			font-family: "Kufam", sans-serif;
+			margin-bottom: 150px;
+			position: relative;
+		}
+
+		.opt-machine h4 {
+			font-size: 35px;
+			font-weight: 500;
+			margin-bottom: 15px;
+			text-align: center;
+		}
+
+		.opt-machine p,
+		.opt-machine ul li {
+			font-size: 20px;
+		}
+
+		.opt-machine ul li {
+			margin-bottom: 10px;
+		}
+
+		.opt-machine .opt-btn {
+			border-radius: 50px;
+			border: 1px solid #fff;
+			font-weight: 500;
+			font-family: "Krub", sans-serif;
+			font-size: 24px;
+			padding: 16px 35px;
+			display: inline-block;
+			margin: 30px auto 0;
+			color: #fff;
+			text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+			background-color: #DE694B;
+		}
+
+		.opt-machine .opt-btn:hover {
+			background-color: #DA6041;
+		}
+
+		.center-btn {
+			text-align: center;
+		}
+
+		.opt-machine img {
+			position: absolute;
+			right: -12%;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+			max-width: 33%;
+		}
+
+		.opt-machine-right {
+			padding-right: 20%;
+		}
+
+		.opt-machine-left {
+			padding-left: 20%;
+		}
+
+		.opt-machine-left img {
+			right: auto;
+			left: -12%;
+		}
+
+		.contact-section {
+			background-image: url('https://savana.life/wlp/casino/slotparadise/images/contact-img.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+			padding: 50px 0;
+		}
+
+		.contact-section h3 {
+			font-size: 50px;
+			margin-bottom: 10px;
+		}
+
+		.contact-section span {
+			font-size: 35px;
+		}
+
+		.contact-form label {
+			font-size: 24px;
+			font-weight: 500;
+			width: 200px;
+		}
+
+		.contact-form input {
+			height: 65px;
+			border-radius: 50px;
+			background-color: #fff;
+			border: none;
+			box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.25);
+			padding: 10px 30px;
+			width: 100%;
+		}
+
+		.form-field {
+			display: flex;
+			align-items: center;
+			margin-bottom: 25px;
+		}
+
+		.contact-form button {
+			border-radius: 50px;
+			color: #fff;
+			font-size: 20px;
+			background-color: #4CDF7C;
+			box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.25);
+			border: none;
+			padding: 15px 100px;
+			margin-top: 40px;
+			margin-left: auto;
+			display: block;
+		}
+
+		footer {
+			background-color: #F0E898;
+			padding: 100px 0;
+			text-align: center;
+			font-size: 20px;
+		}
+
+		footer p {
+			margin-top: 0;
+			margin-bottom: 40px;
+		}
+
+		@media(max-width: 1200px) {
+
+			.hero-section h2,
+			.hero-section span {
+				font-size: 60px;
+			}
+
+			.hero-section p {
+				font-size: 30px;
+			}
+
+			.about-left p {
+				font-size: 24px;
+			}
+
+			.about-right p {
+				font-size: 22px;
+			}
+
+			.opt-machine p,
+			.opt-machine ul li {
+				font-size: 18px;
+			}
+
+			.opt-machine h4 {
+				font-size: 30px;
+			}
+
+			.opt-machine-right {
+				padding-right: 26%;
+			}
+
+			.opt-machine img {
+				right: -4%;
+				max-width: 29%;
+			}
+
+			.opt-machine-left {
+				padding-left: 25%;
+			}
+
+			.opt-machine-left img {
+				right: auto;
+				left: -3%;
+			}
+
+		}
+
+		@media(max-width: 1024px) {
+			.hero-section {
+				height: 70vh;
+			}
+
+			.opt-machine p,
+			.opt-machine ul li {
+				font-size: 16px;
+			}
+
+			.contact-section h3,
+			.best-options h3,
+			.about-left h3 {
+				font-size: 36px;
+			}
+
+			.about-right p {
+				font-size: 20px;
+			}
+		}
+
+		@media(max-width: 990px) {
+
+			.hero-section h2,
+			.hero-section span {
+				font-size: 50px;
+			}
+
+			.hero-section p {
+				font-size: 26px;
+			}
+
+			.row {
+				display: flex;
+				gap: 30px;
+				flex-direction: column;
+			}
+
+			.container-fluid {
+				padding: 0 15px;
+			}
+
+			.row>div {
+				width: 100%;
+			}
+
+			.about-section img {
+				height: auto;
+				position: relative;
+				left: 0;
+				transform: none;
+				top: 0;
+				width: 66%;
+				margin: 0 auto;
+				display: block;
+			}
+
+			.opt-machine img {
+				max-width: 50%;
+				right: auto;
+				top: 0;
+				transform: translate(-50%, -50%);
+				order: 1;
+				left: 50%;
+			}
+
+			.opt-machine {
+				padding: 30px !important;
+				display: flex;
+				flex-direction: column;
+				margin-top: 45%;
+			}
+
+			.opt-machine .opt-btn {
+				font-size: 20px;
+			}
+
+			.opt-text {
+				order: 2;
+				margin-top: 42%;
+			}
+
+			.contact-form button {
+				margin-right: auto;
+			}
+
+		}
+
+		@media(max-width: 660px) {
+
+			.hero-section h2,
+			.hero-section span {
+				font-size: 36px;
+			}
+
+			.hero-section p {
+				font-size: 20px;
+				max-width: 100%;
+			}
+
+			.hero-section-content {
+				justify-content: flex-end;
+				padding-bottom: 40px;
+			}
+
+			.about-left span {
+				font-size: 20px;
+			}
+
+			.contact-section h3,
+			.best-options h3,
+			.about-left h3 {
+				font-size: 30px;
+			}
+
+			.about-left p,
+			.about-right p {
+				font-size: 16px;
+				max-width: 100%;
+			}
+
+			.about-section img {
+				width: 100%;
+			}
+
+			.opt-machine h4 {
+				font-size: 24px;
+			}
+
+			.opt-machine .opt-btn {
+				font-size: 16px;
+				display: block;
+			}
+
+			.contact-section span {
+				font-size: 20px;
+			}
+
+			.form-field {
+				flex-direction: column;
+			}
+
+			.contact-form label {
+				font-size: 16px;
+				width: 100%;
+				margin-bottom: 12px;
+			}
+
+			.contact-form input {
+				height: 45px;
+			}
+
+			.contact-form button {
+				font-size: 16px;
+				display: block;
+				width: 100%;
+			}
+
+			footer {
+				font-size: 16px;
+			}
+
+		}
+	</style>
+</head>
+
+<body>
+	<div class="page-wrapper">
+		<section class="hero-section">
+			<div class="container-fluid h-100">
+				<div class="hero-section-content h-100">
+					<h2 class="main-heading">Welcome to Your Personal</h2>
+					<span class="main-heading">Slot Paradise!</span>
+					<p>Turn Your Home into a Thrilling Casino Experience!</p>
+					<a href="#footer" class="hero-btn">Know more!</a>
+				</div>
+			</div>
+		</section>
+		<section class="about-section">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-5">
+						<div class="about-left">
+							<h3 class="main-heading">A Century of Gaming: The Evolution of Slot Machines</h3>
+							<span>From the 'Liberty Bell' to <span>Innovation</span></span>
+							<p>Invented by Charles Fey in 1895, the 'Liberty Bell' marked the start of slot machines'
+								rise in American bars and saloons.</p>
+						</div>
+					</div>
+					<div class="col-3">
+						<img class="img-fluid" src="https://savana.life/wlp/casino/slotparadise/images/about-img.png"
+							alt="">
+					</div>
+					<div class="col-4">
+						<div class="about-right">
+							<p>Electric machines in the early 20th century revolutionized slot machines despite
+								Prohibition-era restrictions, fueling continuous industry innovation.</p>
+							<p>Modern slot machines in casinos offer diverse themes, gameplay, and jackpot chances,
+								captivating players of all ages.</p>
+							<p>Mid-20th century brought electromechanical slots with complex gameplay, while the 1970s
+								saw the rise of video slots with improved graphics and bonuses.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="best-options">
+			<div class="container">
+				<h3 class="main-heading">Get to know the best options for you to have your own slot machine at home</h3>
+				<div class="opt-machine opt-machine-right">
+					<div class="opt-text">
+						<h4>Mad Monkey XL – Slot Machine with Money Box</h4>
+						<p>Bring the Las Vegas vibe home with colorful lights, exciting sounds, and the thrill of
+							winning at the Mad Monkey Slot Machine</p>
+						<ul>
+							<li>The perfect gift - whether as a decoration, toy or money box. This versatile slot
+								machine is the perfect gift for young and old.</li>
+							<li>Amazing design and top quality - Convince yourself of the magical attraction of the slot
+								machine and make the ultimate Las Vegas experience without having put a single step on a
+								plane!</li>
+						</ul>
+						<div class="center-btn">
+							<a href="#contactusnow" class="opt-btn">Contact us for a quote</a>
+						</div>
+					</div>
+					<img src="https://savana.life/wlp/casino/slotparadise/images/opt-1.png" alt="">
+				</div>
+				<div class="opt-machine opt-machine-left">
+					<img src="https://savana.life/wlp/casino/slotparadise/images/opt-2.png" alt="">
+					<div class="opt-text">
+						<h4>MISTER GADGET Slot Machine</h4>
+						<p>This slot machine will appeal to casino lovers</p>
+						<ul>
+							<li>The small model is original and fun in the same time, challenge your friends</li>
+							<li>Model number: mg3073</li>
+						</ul>
+						<p>This Slot Machine Will Definitely Enjoyers Love , the small size model is original and fun at
+							the same time, challenge your friends</p>
+						<div class="center-btn">
+							<a href="#contactusnow" class="opt-btn">Contact us for a quote</a>
+						</div>
+					</div>
+				</div>
+				<div class="opt-machine opt-machine-right">
+					<div class="opt-text">
+						<h4>PowerTRC Jumbo Slot Machine Coin Bank</h4>
+						<ul>
+							<li>REALISTIC: This slot machine coin bank operates just like the real thing! Insert coins,
+								pull the lever, and it dispenses coins when you hit the jackpot.</li>
+							<li>LIGHTS AND SOUND: Enjoy flashing lights and sounds when you play and win the jackpot!
+								Test your luck or use it as a coin bank.</li>
+							<li>DESIGN: Styled after real casino slot machines, it brings the excitement of a casino to
+								your living room!</li>
+						</ul>
+						<div class="center-btn">
+							<a href="#contactusnow" class="opt-btn">Contact us for a quote</a>
+						</div>
+					</div>
+					<img src="https://savana.life/wlp/casino/slotparadise/images/opt-3.png" alt="">
+				</div>
+				<div class="opt-machine opt-machine-left">
+					<img src="https://savana.life/wlp/casino/slotparadise/images/opt-4.png" alt="">
+					<div class="opt-text">
+						<h4>Repeat Fever Dragon Hearts </h4>
+						<p>Get paid again and again in the Repeat Fever feature!</p>
+						<ul>
+							<li>1-level linked progressive, 1-level stand-alone progressive, and 2 non-incrementing
+								bonuses.</li>
+							<li>Progressive jackpot feature can be triggered during the base game or Repeat Fever
+								feature.</li>
+						</ul>
+						<div class="center-btn">
+							<a href="#contactusnow" class="opt-btn">Contact us for a quote</a>
+						</div>
+					</div>
+				</div>
+				<div class="opt-machine opt-machine-right">
+					<div class="opt-text">
+						<h4>PowerTRC Jumbo Slot Machine Coin Bank</h4>
+						<ul>
+							<li>REALISTIC: This slot machine coin bank operates just like the real thing! Insert coins,
+								pull the lever, and it dispenses coins when you hit the jackpot.</li>
+							<li>LIGHTS AND SOUND: Enjoy flashing lights and sounds when you play and win the jackpot!
+								Test your luck or use it as a coin bank.</li>
+							<li>DESIGN: Styled after real casino slot machines, it brings the excitement of a casino to
+								your living room!</li>
+						</ul>
+						<div class="center-btn">
+							<a href="#contactusnow" class="opt-btn">Contact us for a quote</a>
+						</div>
+					</div>
+					<img src="https://savana.life/wlp/casino/slotparadise/images/opt-5.png" alt="">
+				</div>
+			</div>
+		</section>
+		<section class="contact-section" id="contactusnow">
+			<div class="container">
+				<div class="row">
+					<div class="col-7">
+						<h3 class="main-heading">Do you have questions or queries? Contact us!</h3>
+						<span>Our Team is Here to Help 24/7</span>
+					</div>
+					<div class="col-5">
+						<form id="form" class="contact-form">
+							<div class="form-field">
+								<label>Name</label>
+								<input type="text" name="name" placeholder="Example: Jonathan">
+							</div>
+							<div class="form-field">
+								<label>Last name</label>
+								<input type="text" name="lastName" placeholder="Example: Williams">
+							</div>
+							<div class="form-field">
+								<label>E-mail</label>
+								<input type="email" name="email" placeholder="Example: jon.will@example.com">
+							</div>
+							<div class="form-field">
+								<label>Phone</label>
+								<input type="text" name="phone" placeholder="Example: +44 20 3988 4273">
+							</div>
+							<button type="submit">Suscribe</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer id="footer">
+			<div class="policy-buttons">
+				<div id="privacy-policy-drm_button"><button>Privacy Policy</button></div>
+				<div id="terms-of-use-drm_button"><button>Terms of Use</button></div>
+				<div id="cookie-policy-drm_button"><button>Cookie Policy</button></div>
+			</div>
+			<div class="container">
+				<p>The information provided on this website is for informational purposes only. While we strive to keep
+					the information accurate and up-to-date, we make no representations or warranties of any kind,
+					express or implied, about the completeness, accuracy, reliability, suitability, or availability with
+					respect to the website or the information, products, services, or related graphics contained on the
+					website for any purpose. Any reliance you place on such information is therefore strictly at your
+					own risk. In no event will we be liable for any loss or damage including without limitation,
+					indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data
+					or profits arising out of, or in connection with, the use of this website.</p>
+				<span>© 2024 Slot Paradise. All Rights Reserved</span>
+			</div>
+		</footer>
+	</div>
+
+
+
+	<dialog id="privacy-policy-drm_modal">
+		<span class="cancelModal">×</span>
+		<div class="modal-content">
+			<h1>Statement on Privacy</h1>
+			<p>This Statement on Privacy pertains to <span class="domain"></span> and all affiliated entities (referred
+				to as "we," "us," "our," or "ourselves"). At <span class="domain"></span>, our commitment is to protect
+				the
+				confidentiality of the personal details you furnish to us via our online platform and other electronic
+				channels.
+				This
+				statement delineates how we gather, utilize, and disclose your personal details, as well as your
+				entitlements in
+				relation to this data.</p>
+
+			<h1>Information We Collect</h1>
+			<p>We may gather the subsequent varieties of personal data:</p>
+			<ul>
+				<li>Contact Particulars: This might encompass your full name, electronic mail address, postal address,
+					telephone
+					number, and other
+					contact data.</li>
+				<li>Browsing Data: We compile information regarding your interactions with our website, encompassing
+					your IP
+					address, web browser,
+					operating system, pages browsed, date and time of visit, and akin details.</li>
+			</ul>
+
+			<h1>Use of Information</h1>
+			<p>We apply the personal data we amass for the ensuing purposes:</p>
+			<ul>
+				<li>To furnish you with the goods or services you have solicited.</li>
+				<li>To customize and refine your engagement on our online platform.</li>
+				<li>To dispatch communications concerning our goods, services, or promotions, provided you have accorded
+					permission to
+					receive them.</li>
+				<li>To adhere to our legal and regulatory obligations.</li>
+			</ul>
+
+			<h1>Information Sharing</h1>
+			<p>We refrain from vending, leasing, or sharing your personal data with external entities for their
+				promotional
+				intentions without your express consent. However, we may disclose your personal data to:</p>
+			<ul>
+				<li>Service providers who assist us in delivering our goods and services, such as payment processors and
+					delivery service providers.</li>
+				<li>Governmental entities or other parties as mandated by law, to adhere to legal obligations or
+					processes.
+				</li>
+			</ul>
+
+			<h1>Your Rights</h1>
+			<p>You possess specific entitlements concerning your personal data, including the rights to access, amend,
+				erase,
+				and object to the handling of your personal data. To exercise these rights or to seek elucidation on how
+				we
+				manage your personal data, please reach out to us using the contact details provided below.</p>
+
+			<h1>Changes to this Privacy Notice</h1>
+			<p>We uphold the prerogative to revise this Statement on Privacy at any juncture to mirror modifications in
+				our
+				data
+				management procedures. We prompt you to periodically peruse this statement to remain apprised of how we
+				safeguard your
+				data.</p>
+
+			<h1>Declaration of Affiliation</h1>
+			<p>Please take note that this website participates in affiliate initiatives, including but not restricted to
+				Booking.com
+				and Expedia. This implies that we may receive remuneration for reservations executed via our website.
+				Nevertheless, rest
+				assured that this has no bearing on the rate you incur for your reservation.</p>
+			<p>Furthermore, it is imperative to acknowledge that any concerns or inquiries regarding your reservation
+				should
+				be
+				directed straight to the hotel with whom you made the booking. While we endeavor to provide precise
+				information
+				and a
+				seamless booking process, we disclaim responsibility for managing or resolving any matters related to
+				reservations.</p>
+			<p>We extend our gratitude for utilizing our website to secure your accommodations. Your backing is
+				immensely
+				valued!</p>
+			<p>Contact: Should you harbor any queries or apprehensions regarding this Statement on Privacy or how we
+				manage
+				your personal
+				data, please feel free to reach out to us using the ensuing particulars:</p>
+			<p>Email: info@pickonlineslots.com </p>
+
+			<p>Address: 190 Oxford St, London W1D 1NR, United Kingdom</p>
+		</div>
+	</dialog>
+	<dialog id="terms-of-use-drm_modal">
+		<span class="cancelModal">×</span>
+		<div class="modal-content">
+			<h1>Intoduction</h1>
+			<p>Upon accessing <span class="domain"></span>, you are consenting to adhere to these stipulations in their
+				entirety. Should you
+				dissent from any portion of these terms and conditions, kindly refrain from utilizing <span
+					class="domain"></span>.
+			</p>
+			<h1>Permissible Usage</h1>
+			<p>The utilization of this website in a manner that may induce harm to the site, impede its accessibility,
+				or contravene any laws,
+				regulations, or ethical principles is strictly prohibited.
+			</p>
+
+			<h1>Ownership of Intellectual Property</h1>
+			<p>All content present on this website, encompassing textual content, graphical elements, logos,
+				illustrations, and multimedia
+				material, is safeguarded by copyright and other pertinent intellectual property statutes. Any
+				reproduction, distribution,
+				transmission, or other unauthorized utilization of these materials is expressly forbidden without prior
+				written consent from
+				the proprietors of said content.
+			</p>
+
+			<h1>Links to External Sites</h1>
+			<p>This website may contain hyperlinks directing to external websites beyond our jurisdiction. We neither
+				endorse nor control the
+				content, perspectives, or accessibility of these sites and disclaim responsibility for them.
+			</p>
+
+			<h1>Alterations to the Terms and Conditions</h1>
+			<p>We retain the prerogative to revise these terms and conditions sans prior notification. It is incumbent
+				upon you to periodically
+				review them for any amendments.
+			</p>
+
+			<h1>Usage of Cookies</h1>
+			<p>By accessing <span class="domain"></span>, you are implicitly consenting to the utilization of cookies as
+				delineated in the <span class="domain"></span> Privacy Policy.
+			</p>
+
+			<h1>Jurisdictional Authority</h1>
+			<p>These terms and conditions are subject to Canadian jurisdiction, and any disputes arising from them shall
+				be exclusively adjudicated
+				by Canadian courts.
+			</p>
+
+			<h1>Contact Information</h1>
+			<p>For queries or apprehensions regarding this Privacy Notice or our management of your personal
+				information, please do not hesitate
+				to reach out to us:
+			</p>
+			<p>Email: info@pickonlineslots.com</p>
+			<p>Address: 190 Oxford St, London W1D 1NR, United Kingdom</p>
+		</div>
+	</dialog>
+	<dialog id="cookie-policy-drm_modal">
+		<span class="cancelModal">×</span>
+		<div class="modal-content">
+			<h1>Disclaimer</h1>
+			<p>
+				The content featured on this website is intended for informational, broadcasting, and
+				entertainment purposes. While we strive to maintain the accuracy and currency of the information
+				provided,
+				we cannot guarantee its absolute accuracy. The information presented herein should not be construed
+				as professional counsel. Users access and utilize the information on this
+				website at their own discretion and risk. We disclaim any responsibility for
+				any losses, damages, or injuries that may arise from the utilization
+				or reliance upon the information contained within this website. By
+				accessing this website, you acknowledge this disclaimer, the
+				Terms and Conditions, and the updated Privacy Policy.
+			</p>
+		</div>
+	</dialog>
+	<script>
+		const drmModalsContainers = ["privacy-policy-drm_modal", "terms-of-use-drm_modal", "cookie-policy-drm_modal",];
+		const drmModalButtons = ["privacy-policy-drm_button", "terms-of-use-drm_button", "cookie-policy-drm_button",];
+
+		/** arrays drmModalsContainers, drmModalButtons */
+		document.addEventListener("DOMContentLoaded", () => {
+			const modals = drmModalsContainers.map((id) => document.getElementById(id));
+			const buttons = drmModalButtons.map((id) => document.getElementById(id));
+			const cancelButton = document.querySelectorAll(".cancelModal");
+
+			buttons.forEach((el, idx) =>
+				el.addEventListener("click", (e) => {
+					e.preventDefault();
+					e.stopPropagation();
+
+					modals[idx].showModal();
+					modals[idx].scroll({ top: 0 });
+				})
+			);
+
+			modals.forEach((el) => {
+				el.querySelector(".modal-content").addEventListener("click", (e) =>
+					e.stopPropagation()
+				);
+				el.addEventListener("click", () => el.close());
+			});
+
+			cancelButton.forEach((el) =>
+				el.addEventListener("click", () => {
+					modals.forEach((el) => el.close(""));
+				})
+			);
+		});
+
+	</script>
+
+	<style>
+		.policy-buttons {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 20px;
+
+		}
+
+		.policy-buttons button {
+			background: transparent;
+			text-decoration: underline;
+			border: none;
+			color: black;
+			margin: 0 12px;
+			font-weight: 700;
+			font-size: 16px;
+			cursor: pointer;
+		}
+	</style>
+
+
+	<script>
+		const cookieConsentMessage = "This website uses cookies to ensure you get the best experience on our website.";
+		const cookieConsentInfo = "Learn more";
+		const cookieConsentOKText = "OK";
+		const cookieConsentRedirect = () => { document.getElementById('terms-of-use-drm_button').click() };
+		//cookieConsentMessage, cookieConsentRedirect, cookieConsentInfo, cookieConsentOKText, cookieConsentPrimaryColor, cookieConsentSecondaryColor
+		document.addEventListener("DOMContentLoaded", () => {
+			function ccBanner() {
+				//check cookies
+				if (document.cookie) {
+					var cookieString = document.cookie;
+					var cookieList = cookieString.split(";");
+					// if cookie named OKCookie is found, return
+					for (x = 0; x < cookieList.length; x++) {
+						if (cookieList[x].indexOf("OKCookie") != -1) {
+							return;
+						}
+					}
+				}
+
+				var docRoot = document.body;
+				var okC = document.createElement("div");
+				okC.setAttribute("id", "okCookie");
+				var okCp = document.createElement("p");
+				var okcText = document.createTextNode(cookieConsentMessage);
+
+				//close button
+				var okCclose = document.createElement("a");
+				var okcCloseText = document.createTextNode(cookieConsentOKText);
+				okCclose.setAttribute("href", "#");
+				okCclose.setAttribute("id", "okClose");
+				okCclose.appendChild(okcCloseText);
+				okCclose.addEventListener("click", closeCookie, false);
+
+				//privacy button
+				var okCprivacy = document.createElement("a");
+				var okcPrivacyText = document.createTextNode(cookieConsentInfo);
+				console.log(cookieConsentRedirect, "cookieConsentRedirect");
+				cookieConsentRedirect &&
+					okCprivacy.addEventListener("click", () => {
+						if (typeof cookieConsentRedirect === "function") {
+							return void cookieConsentRedirect();
+						}
+						return void window.open(cookieConsentRedirect);
+					});
+
+				//okCprivacy.setAttribute("href", privacyLink);
+				okCprivacy.setAttribute("id", "okCprivacy");
+				okCprivacy.appendChild(okcPrivacyText);
+
+				//add to DOM
+				const btnContainer = document.createElement("div");
+				btnContainer.style.display = "flex";
+				btnContainer.style.alignItems = "center";
+				btnContainer.appendChild(okCclose);
+				btnContainer.appendChild(okCprivacy);
+				okCp.appendChild(okcText);
+				okC.appendChild(okCp);
+				//okC.appendChild(okCclose);
+				okC.appendChild(btnContainer);
+				docRoot.appendChild(okC);
+
+				okC.classList.add("okcBeginAnimate");
+
+				function closeCookie() {
+					var cookieExpire = new Date();
+					cookieExpire.setFullYear(cookieExpire.getFullYear() + 2);
+					document.cookie =
+						"OKCookie=1; expires=" + cookieExpire.toGMTString() + ";";
+					docRoot.removeChild(okC);
+				}
+			}
+
+			ccBanner();
+		});
+
+	</script>
+
+
+	<script>
+		const drmGsUri = "https://script.google.com/macros/s/AKfycbwbZCOYhvjjVxar35EvLBhTCSz07A7VhsT-sKOlVZZBe8LGBchildvdCthsSUv6OkYK/exec";
+		const drmGsNameSelector = "input[name='name']";
+		const drmGsLastNameSelector = "input[name='lastName']";
+		const drmGsEmailSelector = "input[name='email']";
+		const drmGsPhoneSelector = "input[name='phone']";
+		const drmGsLanding = "slotparadise";
+		document.querySelectorAll('span.domain').forEach(el => el.innerText = window.location.hostname)
+		/**drmGsUri, drmGsNameSelector, drmGsLastNameSelector, drmGsEmailSelector, drmGsPhoneSelector, drmGsLanding */
+		document.addEventListener("DOMContentLoaded", () => {
+			const form =
+				document.getElementById("form") || document.querySelector("form");
+			form.addEventListener("submit", function (event) {
+				event.preventDefault();
+				const firstName = form.querySelector(drmGsNameSelector);
+				const lastName = form.querySelector(drmGsLastNameSelector);
+				const email = form.querySelector(drmGsEmailSelector);
+				const phone = form.querySelector(drmGsPhoneSelector);
+
+				const btn = form.querySelector("button[type='submit']");
+				const submitTexy = btn.innerText;
+				btn.innerHTML = '<div class="drm-loading"></div>';
+				fetch(drmGsUri, {
+					method: "POST",
+					mode: "no-cors",
+					redirect: "follow",
+					cache: "no-cache",
+					headers: new Headers({
+						"Content-Type": "application/json",
+					}),
+					body: JSON.stringify({
+						firstName: firstName.value,
+						lastName: lastName.value,
+						email: email.value,
+						phone: phone.value,
+						site: drmGsLanding,
+					}),
+				})
+					.then(() => {
+						btn.innerHTML = "✓";
+					})
+					.finally(() => {
+						setTimeout(() => {
+							btn.innerHTML = submitTexy;
+							phone.value = null;
+							email.value = null;
+							lastName.value = null;
+							firstName.value = null;
+						}, 1500);
+					});
+			});
+		});
+
+	</script>
+</body>
+
+</html>
